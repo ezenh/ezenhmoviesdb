@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +8,70 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700;800&family=Red+Hat+Display:wght@400;500&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <header>
-        <h2>EZENH MOVIS DB</h2>
+    <nav>
+        <h2>EZENH MOVIES DB</h2>
         <ul>
-            <li>Home</li>
-            <li>Trending Movies</li>
-            <li>Categories</li>
-            <li>Popular</li>
-            <li>Upcoming</li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#pv-trending">Trending Movies</a></li>
+            <li><a href="#pv-categories">Categories</a></li>
+            <li><a href="#pv-popular">Popular</a></li>
+            <li><a href="#pv-upcoming">Upcoming</a></li>
         </ul>
         <input type="search" placeholder="search">
-    </header>
-    <main></main>
-    <footer></footer>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="none">
+            <path d="M17.5 17.5L22 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20C15.9706 20 20 15.9706 20 11Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+        </svg>
+    </nav>
+
+    <main>
+        <header id="main-movies--container" class ="hscroll-generic ">
+        </header>
+
+        <section id="pv-trending">
+            <div class="section-title">
+                <h2>Tendencia</h2>
+                <button id="trending-vermas" class="vermas">VER MÁS</button>
+            </div>
+            <div id="trending--container" class="hscroll-generic"></div>
+        </section>
+
+        <section id="pv-categories">
+            <h2>Categorías</h2>
+            <div id="categories--container" class="hscroll-generic"></div>
+        </section>
+
+        <section id="pv-popular">
+            <div class="section-title">
+                <h2>Populares</h2>
+                <button id="popular-vermas" class="vermas">VER MÁS</button>
+            </div>
+            <div id="popular--container" class="hscroll-generic"></div>
+        </section>
+
+        <section id="pv-upcoming">
+            <div class="section-title">
+                <h2>Próximos Estrenos</h2>
+                <button id="upcoming-vermas" class="vermas">VER MÁS</button>
+            </div>
+            <div id="upcoming--container" class="hscroll-generic"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p> © All rights reserved | Ezequiel Nielsen Hillen 2024</p>
+        <a href="">3816376266</a>
+        <a href="">ezenh87@gmail.com</a>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="src/navigation.js"></script>
     <script src="src/private.js"></script>
     <script src="src/main.js"></script>
 </body>
