@@ -7,7 +7,7 @@
     --foot: #141414;
     --bkg: rgb(12, 12, 12);
     --grey: grey;
-    --border: 1px solid rgb(255,255,255, 0.2);
+    --border: 1px solid rgb(255,255,255, 0.1);
     --button: rgba(204, 0, 0, 0.6);
     }
 
@@ -29,13 +29,15 @@ nav {
     top: 0;
     display: flex;
     width: 100vw;
+    min-width: 1030px;
     height: 40px;
     justify-content: space-between;
     padding: 12px 30px;
     align-items: center;
     border-bottom: var(--border);
-    background: linear-gradient(var(--black), rgb(12,12,12, 0.6));
-    box-shadow: 0px 5px 10px rgb(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(var(--black), rgb(0,0,0, 0.6));
+    /* box-shadow: 0px 5px 10px rgb(0,0,0,0.7); */
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(8px);
     z-index: 10;
@@ -53,13 +55,26 @@ nav {
         padding: 0 40px;
         font-size: var(--md);
         }
+        nav ul li {
+            display: flex;
+            width: 120px;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            text-wrap: nowrap;
+            }
         nav ul li a {
-            color: grey;
+            color: rgb(255, 255, 255);
             text-decoration: none;
+            width: 100%;
+            text-align: center;
             }
-            nav ul li a:hover {
+            nav ul li:hover {
                 color: white;
-            }
+                border-bottom: 6px solid brown;
+                padding-top: 6px;
+                }
+
     nav input {
         width: 150px;
         border: var(--border);
@@ -90,27 +105,38 @@ main {
         height: 500px;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
+        }
+    #main-movies--container::-webkit-scrollbar {
+        display: none;
     }
     #main-movies--container article {
         display: flex;
-        flex-direction: column;
         justify-content: center;
         min-width: 100vw;
-        padding: 190px 15% 0px;
-        gap: 10px;
-        /* background-image: url('img/strange.jpeg'); */
+        scroll-snap-align: center;
         background-repeat: no-repeat;
         background-size: cover;
-        scroll-snap-align: center;
         }
+        .main-movie {
+            display: flex;
+            flex-direction: column;
+            min-width: 100vw;
+            height: 500px;
+            gap: 10px;
+            justify-content: end;
+            padding: 0px 15% 50px;
+
+            background: linear-gradient(rgb(0,0,0,0.0), rgb(0,0,0,.6));
+            }
         .main-movie div, .main-movie h2, .main-movie p {
             width: 400px;
+            z-index: 10;
             }
         .main-movie-buttons {
             display: flex;
             gap: 15px;
             }
-        .main-movie-buttons button {
+        .main-movie button {
             display: flex;
             align-items: center;
             gap: 5px;
@@ -132,9 +158,29 @@ main {
                     background-color: rgba(56, 56, 56, 0.7);
                     -webkit-backdrop-filter: blur(6px);
                     backdrop-filter: blur(6px);              
-                }
+                    }
+
+    #dots--container {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top: 480px;
+        height: 10px;
+        width: 100%;
+        justify-content: center;
+        gap: 5px;
+        }
+        #dots--container div {
+            display: flex;
+            height: 8px;
+            width: 8px;
+            background-color: rgb(128,128,128, 0.3);
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);  
+            border-radius: 50px;
+            }
     
-    section{
+    section {
         display: flex;
         flex-direction: column;
         width: 70%;
@@ -219,4 +265,85 @@ footer {
     justify-content: space-evenly;
     border-top: var(--border);
     font-size: var(--sm);
+}
+
+
+
+#navigation--container {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 100vw;
+    align-items: center;
+    /* justify-content: space-around; */
+    background-color: rgb(12, 12, 12, 0.8);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    }
+    #navigation--container #navigation-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 70vw;
+        margin-bottom: auto;
+        padding-top: 80px;
+        }
+            #navigation-header h1 {
+                font-size: 5rem;
+                }
+            #navigation-header img {
+                height: 26px;
+                }
+        #navigation-main {
+            display: flex;
+            width: 80vw;
+            justify-content: center;
+            align-items: center;
+            }
+            #navigation-content {
+                display: flex;
+                width: 70vw;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                }
+                #navigation-content article {
+                    display: flex;
+                    flex-direction: column;
+                    width: 150px;
+                    gap: 5px;
+                    }
+            #navigation-pages {
+                display: flex;
+                gap: 8px;
+                margin-top: auto;
+                padding-bottom: 80px;
+                }
+                #pages::-webkit-scrollbar {
+                    display: none;
+                    }
+            #navigation-main button {
+                background-color: rgb(255,255,255,0.1);
+                border: none;
+                padding: 0 10px;
+                border-radius: 4px;
+                height: 50px;
+                }
+                #back, #forward {
+                    font-size: 2rem;
+                    }
+            #pages {
+                display: flex;
+                width: 68vw;
+                gap: 8px;
+                overflow-x: auto ;
+                align-items: center;
+                }
+
+            
+
+
+a, button:hover {
+    cursor: pointer;
 }

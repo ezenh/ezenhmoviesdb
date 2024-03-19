@@ -12,17 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<body id="body">
     <nav>
         <h2>EZENH MOVIES DB</h2>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#pv-trending">Trending Movies</a></li>
-            <li><a href="#pv-categories">Categories</a></li>
-            <li><a href="#pv-popular">Popular</a></li>
-            <li><a href="#pv-upcoming">Upcoming</a></li>
+            <li><a id="homeOption" href="#">Home</a></li>
+            <li><a id="trendingOption" href="#trends">Trending Movies</a></li>
+            <li><a id="categoriesOption" href="#categories">Categories</a></li>
+            <li><a id="popularOption" href="#popular">Popular</a></li>
+            <li><a id="upcomingOption" href="#upcomming">Upcoming</a></li>
         </ul>
-        <input type="search" placeholder="search">
+        <input id="searchOption" type="search" placeholder="search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="none">
             <path d="M17.5 17.5L22 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20C15.9706 20 20 15.9706 20 11Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
@@ -30,8 +30,37 @@
     </nav>
 
     <main>
-        <header id="main-movies--container" class ="hscroll-generic ">
+        <!-- NAVIGATION CONTENT -->
+        <section id="navigation--container">
+
+            <div id="navigation-header">
+                <h1 id="navigation-title">TITULO DE OPCION</h1>
+                <a id="quitWindow"><img  src="/icons/x.png" alt=""></a>
+            </div>
+
+            <div id="navigation-main">
+                <button id="back"><</button>
+                <div id="navigation-content"></div>
+                <button id="forward">></button>
+            </div>
+
+            <div id="navigation-pages">
+                <div id="pages"></div>
+            </div>
+
+        </section>
+
+
+        <!-- ALWAYS VISIBLE CONTENT -->
+        <header id="main-movies--container">
         </header>
+        <section id="dots--container">
+            <div id="dot1"></div>
+            <div id="dot2"></div>
+            <div id="dot3"></div>
+            <div id="dot4"></div>
+            <div id="dot5"></div>
+        </section>
 
         <section id="pv-trending">
             <div class="section-title">
